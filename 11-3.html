@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>11-3</title>
+        <style>
+            *{margin: 0px;padding: 0px;}
+            p{
+                border: 1px solid paleturquoise;
+                widows: 300px; height: 250px;
+                line-height: 250px;
+                margin: 50px auto;
+                text-align: center;
+                background-color: plum;
+                transition: all 1s linear;
+            }
+        </style>
+    </head>
+    <body>
+        <p>本日(<span id="output2"></span>)のラッキー星座は...<span id="output1"></span>です。</p>
+        <script>
+            const SPAN1 = document.getElementById("output1");
+            const SPAN2 = document.getElementById("output2");
+
+            let resurt1;
+            let n = Math.floor(Math.random()*11);
+            if(n===0){resurt1="♈牡羊座♈";}
+            if(n===1){resurt1="♉牡牛座♉";}
+            if(n===2){resurt1="♊双子座♊";}
+            if(n===3){resurt1="♋蟹座♋";}
+            if(n===4){resurt1="♌獅子座♌";}
+            if(n===5){resurt1="♍乙女座♍";}
+            if(n===6){resurt1="♎天秤座♎";}
+            if(n===7){resurt1="♏蠍座♏";}
+            if(n===8){resurt1="♐射手座♐";}
+            if(n===9){resurt1="♑山羊座♑";}
+            if(n===10){resurt1="♒水瓶座♒";}
+            if(n===11){resurt1="♓魚座♓";}
+
+            SPAN1.innerHTML=resurt1;
+
+            const now = new Date();
+            let m = now.getMonth()+1;
+            let d = now.getDate();
+ 
+            SPAN2.innerHTML=m+"月"+d+"日";
+        </script>
+    </body>
+</html>
